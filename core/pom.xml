@@ -30,7 +30,6 @@
         </dependency>
 
         <dependency>
-            <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
             <groupId>liga.medical</groupId>
             <artifactId>common-services</artifactId>
         </dependency>
@@ -47,10 +46,15 @@
             <artifactId>monitoring-dto</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
-<!--        <finalName>analyzer-service</finalName>-->
+        <finalName>medical-monitoring-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
