@@ -65,7 +65,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>liga.medical.medicalmonitoring.core.MessageAnalyzerApplication</mainClass>
+                    <mainClass>liga.medical.medicalmonitoring.core.MedicalMonitoringApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
