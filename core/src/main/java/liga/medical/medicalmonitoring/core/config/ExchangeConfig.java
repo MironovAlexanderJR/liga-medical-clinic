@@ -1,6 +1,6 @@
 package liga.medical.medicalmonitoring.core.config;
 
-import liga.medical.medicalmonitoring.core.model.MessageType;
+import liga.medical.commondto.Type;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -26,16 +26,16 @@ public class ExchangeConfig {
 
     @Bean
     public Binding bindingDailyMsg() {
-        return BindingBuilder.bind(dailyQueue).to(directExchange()).with(MessageType.DAILY.toString());
+        return BindingBuilder.bind(dailyQueue).to(directExchange()).with(Type.DAILY.toString());
     }
 
     @Bean
     public Binding bindingAlertMsg() {
-        return BindingBuilder.bind(alertQueue).to(directExchange()).with(MessageType.ALERT.toString());
+        return BindingBuilder.bind(alertQueue).to(directExchange()).with(Type.ALERT.toString());
     }
 
     @Bean
     public Binding bindingErrorMsg() {
-        return BindingBuilder.bind(errorQueue).to(directExchange()).with(MessageType.ERROR.toString());
+        return BindingBuilder.bind(errorQueue).to(directExchange()).with(Type.ERROR.toString());
     }
 }

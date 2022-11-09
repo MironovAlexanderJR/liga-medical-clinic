@@ -1,5 +1,6 @@
 package liga.medical.medicalmonitoring.core.service;
 
+import liga.medical.medicalmonitoring.core.annoatations.dbLog;
 import liga.medical.medicalmonitoring.core.api.RabbitRouterService;
 import liga.medical.medicalmonitoring.core.model.QueueNames;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ public class RabbitRouterListener {
 
     private final RabbitRouterService rabbitRouterService;
 
+    @dbLog
     @RabbitListener(queues = QueueNames.COMMON_MONITORING_QUEUE)
     public void receiveAndRedirectMessage(String message) {
         rabbitRouterService.routeMessage(message);
